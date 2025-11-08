@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+  solar_forecaster:
+    build: ./solar_forecaster
+    container_name: solar_forecaster
+    ports:
+      - "8001:8000"
+    networks:
+      - renewable_net
+
+  grid_balancer:
+    build: ./grid_balancer
+    container_name: grid_balancer
+    ports:
+      - "8002:8000"
+    depends_on:
+      - solar_forecaster
+    networks:
+      - renewable_net
+
+networks:
+  renewable_net:
+    driver: bridge
