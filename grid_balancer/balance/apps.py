@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
-class ForecastConfig(AppConfig):
+class BalanceConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'forecast'
+    name = 'balance'
