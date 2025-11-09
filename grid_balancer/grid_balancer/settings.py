@@ -13,7 +13,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'forecast',
+    'balance',
 ]
 
 MIDDLEWARE = [
@@ -27,8 +27,8 @@ MIDDLEWARE = [
 ]
 
 
-ROOT_URLCONF = 'solar_forecaster.urls'
-WSGI_APPLICATION = 'solar_forecaster.wsgi.application'
+ROOT_URLCONF = 'grid_balancer.urls'
+WSGI_APPLICATION = 'grid_balancer.wsgi.application'
 DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': BASE_DIR / 'db.sqlite3'}}
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
