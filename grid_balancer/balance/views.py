@@ -1,10 +1,10 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-import requests, logging
+import requests, logging, os
 
 logger = logging.getLogger(__name__)
-SOLAR_FORECASTER_URL = "http://solar_forecaster:8000/forecast/"
+SOLAR_FORECASTER_URL = os.getenv("SOLAR_FORECASTER_URL", "http://solar-forecaster:8000/forecast/")
 
 @api_view(['POST'])
 def balance_view(request):

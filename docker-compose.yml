@@ -7,9 +7,10 @@ services:
       - "8001:8000"
     volumes:
       - ./solar_forecaster:/app
-      - ./data/solar_forecaster_db:/app
     networks:
-      - renewable_net
+      renewable_net:
+        aliases:
+          - solar-forecaster
 
   grid_balancer:
     build: ./grid_balancer
@@ -20,6 +21,8 @@ services:
       - solar_forecaster
     volumes:
       - ./grid_balancer:/app
+    environment:
+      - SOLAR_FORECASTER_URL=http://solar-forecaster:8000/forecast/
     networks:
       - renewable_net
 
