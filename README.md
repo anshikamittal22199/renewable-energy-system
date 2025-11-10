@@ -1,4 +1,3 @@
-// ...existing code...
 # Renewable Energy System
 
 A small example project that simulates a renewable energy forecasting and grid-balancing system built with Django, Django REST Framework, and Docker Compose.
@@ -159,5 +158,3 @@ docker compose exec grid_balancer python manage.py test
 ```
 
 ---
-
-If you'd like, I can also add a short development README in each service folder, wire up a named volume for persistent sqlite storage, or switch the project to a Postgres service for production-like persistence. Let me know which you prefer.
