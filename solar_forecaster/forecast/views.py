@@ -16,16 +16,15 @@ def forecast_view(request):
         date_str = data.get("date")
         sun_intensity_factor = float(data.get("sun_intensity_factor", 0))
         daylight_hours = float(data.get("daylight_hours", 0))
-
+        print(data)
         try:
             date = datetime.strptime(date_str, "%Y-%m-%d").date()
         except Exception:
             return Response({"error": "Invalid date format. Use YYYY-MM-DD"}, status=400)
 
         # Simple simulation
-        some_base_value = 10
+        some_base_value = 50
         forecast_kwh = some_base_value + (sun_intensity_factor * daylight_hours)
-
         forecast = Forecast.objects.create(
             location=location,
             date=date,

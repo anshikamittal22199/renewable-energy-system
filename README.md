@@ -32,12 +32,12 @@ docker compose up --build
 
 This will start:
 - `solar_forecaster` service on port `8001`
-- `grid_balancer` service on port `8000`
+- `grid_balancer` service on port `8002`
 
 3. Verify health
 ```bash
-curl http://localhost:8000/health/
-curl http://localhost:8001/health/
+curl http://localhost:8001/health
+curl http://localhost:8002/health/
 ```
 
 ---

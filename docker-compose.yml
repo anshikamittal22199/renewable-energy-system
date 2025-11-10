@@ -5,6 +5,9 @@ services:
     container_name: solar_forecaster
     ports:
       - "8001:8000"
+    volumes:
+      - ./solar_forecaster:/app
+      - ./data/solar_forecaster_db:/app
     networks:
       - renewable_net
 
@@ -15,6 +18,8 @@ services:
       - "8002:8000"
     depends_on:
       - solar_forecaster
+    volumes:
+      - ./grid_balancer:/app
     networks:
       - renewable_net
 
